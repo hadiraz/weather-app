@@ -1,0 +1,165 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    padding: 1rem;
+    margin: 0;
+    background-color: #ededed;
+}
+.container{
+    width: 100%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main-app{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    margin-bottom: 2rem;
+}
+.input-box{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid blue;
+    margin-bottom: 1em;
+    height: 30px;
+    font-size: 20px;
+    width: 60%;
+    color: black;
+}
+.submit-btn{
+    width: 60%;
+    height: 35px;
+    background-color: #27bccf;
+    text-align: center;
+    line-height: 35px;
+    cursor: pointer;
+    border-radius: 7px;
+    color: white;
+}
+.submit-btn:hover{
+    background-color:#34c8db ;
+}
+.app-weather-items{
+    width: 100%;
+    display: flex;
+    flex-flow:row wrap;
+    margin-right: 0.5em;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.app-weather-item{
+    width: 200px;
+    background-color: #2f6680;
+    height: 265px;
+    border-radius: 8px;
+    padding: 0.2em 0.7em 1em 0.7em;
+    display: flex;
+    flex-flow:column;
+    align-items: center;
+    color: white;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.weather-desc{
+    display: flex;
+    flex-flow:column;
+}
+.weather-desc span{
+    color: #ccc;
+    margin-top: 0.5em;
+    font-size: 0.9em;
+}
+.item-city-name{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.city-temp{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 100%;
+}
+.city-temp span{
+    margin-top: 0.5em;
+}
+.fas{
+    font-size: 20px;
+}
+.fa-temperature-low{
+    color: #00ffe7;
+}
+.fa-temperature-high{
+    color: #ff2929;
+}
+.temp-image{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.real-temp{
+    bottom:0;
+    padding: 5px;
+    margin: 0;
+}
+.error{
+    display:none;
+    width: 60%;
+    color: red;
+    margin-top: 0.5rem;
+}
+.item-top-menu{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+.fa-bookmark , .fa-trash-alt{
+    display: flex;
+    margin-right: 0.5em;
+    transition: 0.3s;
+    top: -25px;
+    position: relative;
+    cursor: pointer;
+}
+.app-weather-item:hover .fa-bookmark{
+    top: 0;
+    display: flex;
+    animation: shaking 0.5s;
+}
+.fa-bookmark.saved{
+    color:#ffe600;
+}
+.fa-trash-alt:hover{
+    color: rgb(255, 67, 67);
+}
+.app-weather-item:hover .fa-trash-alt{
+    top: 0;
+    display:flex;
+    animation: shaking 0.5s;
+}
+.fa-bookmark:hover{
+    color: #ffe600;
+}
+@keyframes shaking{
+    25%{transform: rotate(10deg);}
+    50%{transform: rotate(-10deg);}
+    75%{transform: rotate(10deg);}
+    100%{transform: rotate(0deg);}
+}
