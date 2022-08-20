@@ -13,7 +13,6 @@ saveBtn.forEach(function(item,index){
 removeBtn.forEach(function(item,index){
     item.addEventListener("click" , event => removeCity(event));
 });
-window.addEventListener("load",getApiData("tehran"))
 submitBtn.addEventListener("click" , event => getApiData());
 (function(){
     localSaves = JSON.parse(localStorage.getItem("saved_cities"));
