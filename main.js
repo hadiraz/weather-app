@@ -5,7 +5,7 @@ const submitBtn = document.querySelector(".submit-btn");
 const errorBox = document.querySelector(".error");
 let saveBtn = document.querySelectorAll(".save-btn");
 let removeBtn = document.querySelectorAll(".remove-btn");
-let localSaves;
+let localSaves = [];
 alert("* If the contents are not loaded please turn on VPN *")
 saveBtn.forEach(function(item,index){
     item.addEventListener("click" , event => saveCity(event));
@@ -14,13 +14,14 @@ removeBtn.forEach(function(item,index){
     item.addEventListener("click" , event => removeCity(event));
 });
 submitBtn.addEventListener("click" , event => getApiData());
+
 (function(){
-    localSaves = JSON.parse(localStorage.getItem("saved_cities"));
-    localSaves.forEach(function(item,index){
+    !localStorage.getItem("saved_cities") && localStorage.setItem("saved_cities" , JSON.stringify(["tehran"])) ;
+    localSaves = JSON.parse(localStorage.getItem("saved_cities")) ;
+    localSaves.length > 0 && localSaves.forEach(function(item,index){
         getApiData(item);
 
     })
-    
 })()
 async function getApiData (customInput=null){
     let input ; 
